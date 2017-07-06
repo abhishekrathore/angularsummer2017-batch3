@@ -1,0 +1,27 @@
+         div{
+               color:red;
+           }
+
+          .style1{
+              color:blue;
+          }
+
+          .style2{
+              color:green;
+              background-color:#EEEEEE;
+              opacity:0.5;
+              font-size:20px;
+              text-align: center;
+              padding: 0 40px;
+              border:2px solid black;
+              border-radius:20px;
+              border-width: 5px 20px;
+              margin:30px;
+              display:inline-block;
+          }
+
+          #div2{
+              color:yellow
+          }
+          
+        
