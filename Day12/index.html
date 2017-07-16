@@ -1,0 +1,49 @@
+<html ng-app="test">
+    <head>
+    <title>Angular- Controller and In-built Directives</title>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="new_app.js"></script>
+    </head>
+    <body>
+        
+        <div ng-controller="demoCtrl as demo">
+        
+          <select ng-model="demo.capital" ng-change="demo.change(demo.capital)">
+              <option ng-repeat="nation in demo.nations" value="{{nation.capital}}">
+                  {{nation.name}}
+              </option>
+          </select>
+
+          <p>
+            {{demo.capital}}
+            {{demo.pop}}
+          </p>
+
+         <table>
+          <tr>  <td> Name </td>
+              <td> Capital </td>
+              <td> Pop </td></tr>   
+          <tr ng-repeat="nation in demo.nations">
+              <td>{{$index}}-{{nation.name}} - {{$last}}</td>
+              <td> {{nation.capital}} </td>
+              <td>{{nation.pop}}</td>
+          </tr>
+            </table>
+
+
+
+            <span ng-repeat="nation in demo.nations">
+                {{nation.name}} {{$last ? '' : ','}}
+            </span>
+
+
+        
+        </div>
+
+
+
+
+                
+   </body>
+ 
+</html>

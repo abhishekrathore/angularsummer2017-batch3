@@ -1,0 +1,31 @@
+<html ng-app="mainApp">
+    <head>
+    <title>Angular- Controller and In-built Directives</title>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="app.js"></script>
+    </head>
+    <body>
+        
+                 <div ng-controller="firstCtrl as first">
+                
+                    <input type="text" ng-model="first.item">
+                    <button ng-click="first.add(first.item)">Add</button>
+                <select ng-model="first.nation">
+                     <option value="{{item}}" ng-repeat="item in first.items">
+                         {{item}}
+                    </option>   
+                </select>
+
+                <p>{{first.nation}}</p>
+                
+                </div>
+
+
+
+
+
+
+                
+   </body>
+ 
+</html>
