@@ -1,0 +1,9 @@
+  <div ng-controller="secondCtrl as second">  
+            
+            <ul>
+                <li ng-repeat="task in second.tasks">
+                        {{task}}  <button ng-click="second.del($index)">delete</button>
+                </li>
+            </ul>
+
+</div>
