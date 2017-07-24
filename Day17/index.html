@@ -1,0 +1,37 @@
+<html ng-app="mainApp">
+    <head>
+    <title>Angular - Firebase</title>
+    <script src="angular.js"></script>
+    <script src="node_modules/firebase/firebase.js"></script>
+    <script src="node_modules/angularfire/dist/angularfire.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCdfZWaWwNJc71YyqbJYUcpWkrt98qC7D4",
+    authDomain: "testfirebase-9b1bb.firebaseapp.com",
+    databaseURL: "https://testfirebase-9b1bb.firebaseio.com",
+    projectId: "testfirebase-9b1bb",
+    storageBucket: "testfirebase-9b1bb.appspot.com",
+    messagingSenderId: "403885342811"
+  };
+  firebase.initializeApp(config);
+</script>
+    <script src="app.js"></script>
+
+    </head>
+     <body>
+
+        <div ng-controller="firstCtrl as first">   
+        
+
+            <div ng-repeat="s in first.students">
+                {{s.name}}
+            </div>
+
+
+
+        </div>
+
+        
+    </body>
+</html>
