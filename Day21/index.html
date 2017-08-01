@@ -1,0 +1,21 @@
+<html ng-app="mainApp">
+    <head>
+    <title>Angular - Firebase</title>
+    <script src="angular.js"></script>
+    <script src="app.js"></script>
+ </head>
+    <body ng-controller="firstCtrl as first">
+        {{first.date | date:'MMMM dd'}}
+        <input type="text" ng-model="first.field">
+                <input type="text" ng-model="first.search.first_name">
+                <input type="text" ng-model="first.search.last_name">
+
+                {{first.search}}
+
+        <div ng-repeat="person in first.people | filter:first.search: first.comparator | orderBy:first.field | limitTo :100">
+           {{$index+1}}. {{person.first_name | uppercase}} {{person.last_name}} {{person.ip_address}}
+           ------ {{person.amount | number:2 }}
+        </div>
+        
+    </body>
+</html>
