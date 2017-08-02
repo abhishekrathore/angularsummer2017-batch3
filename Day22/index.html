@@ -1,0 +1,78 @@
+<html ng-app="mainApp">
+    <head>
+    <title>Angular - Firebase</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <script src="angular.js"></script>
+    <script src="node_modules/firebase/firebase.js"></script>
+    <script src="node_modules/angularfire/dist/angularfire.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCdfZWaWwNJc71YyqbJYUcpWkrt98qC7D4",
+    authDomain: "testfirebase-9b1bb.firebaseapp.com",
+    databaseURL: "https://testfirebase-9b1bb.firebaseio.com",
+    projectId: "testfirebase-9b1bb",
+    storageBucket: "testfirebase-9b1bb.appspot.com",
+    messagingSenderId: "403885342811"
+  };
+  firebase.initializeApp(config);
+</script>
+    <script src="app.js"></script>
+    <style>
+    .done{
+        text-decoration: line-through;
+    }
+ 
+</style>
+
+
+    </head>
+     <body ng-controller="todoCtrl as todo">
+
+
+        <div class="row">
+            <div class="col-xs-6">
+                <input type="text" class="form-control" ng-model="todo.task" ng-keypress="$event.keyCode==13 && todo.addTask(todo.task)">
+            </div>
+            <div class="col-xs-6">
+                <button class="btn btn-success btn-block" ng-hide="todo.editMode" ng-disabled="!todo.task" ng-click="todo.addTask(todo.task)">Add</button>
+                <button class="btn btn-warning btn-block" ng-show="todo.editMode" ng-disabled="!todo.task" ng-click="todo.updateTask()">Update</button>
+
+            </div>
+              <div class="col-xs-6">
+                <input type="text" class="form-control" ng-model="todo.search.title" placeholder="Search">
+            </div>
+            <div class="col-xs-6">
+                <div>Tasks completed : {{todo.getCompletedTasks()}}/{{todo.tasks.length}}</div>
+            </div>
+             <div class="col-xs-12">
+                <div><input type="checkbox" ng-model="todo.pending"> Only Show Uncompleted Tasks</div>
+              {{todo.pending}}
+            </div>
+
+        </div>
+         <div class="row">
+            <div class="col-xs-12">
+                <ul class="list-group">
+                    <li class="list-group-item" ng-class="{'list-group-item-success':task.status,'done':task.status}" ng-repeat="task in todo.tasks | filter:todo.search | filter:{status:todo.pending}: todo.custom | orderBy:'status'">
+                        {{task.title}}
+                        <button class="btn btn-info" ng-class="{'btn-danger':task.status}" ng-click="todo.done(task.$id)">{{task.status ? 'Undo'  :'Done'}}</button>
+                        <button class="btn btn-warning">Up</button>
+                        <button class="btn btn-danger">Down</button>
+                        <button class="btn btn-danger" ng-click="todo.edit($index)">Edit</button>
+
+                        <button class="btn btn-danger" ng-click="todo.removeTask($index)"><i class="glyphicon glyphicon-trash"></i></button>
+                        {{task.created_at | date:'medium'}}
+
+                    </li>
+               
+
+
+                </ul>
+            </div>
+        </div>
+
+
+        
+    </body>
+</html>
