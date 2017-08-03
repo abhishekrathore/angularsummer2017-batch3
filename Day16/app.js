@@ -15,7 +15,7 @@ angular
 .factory("dataService",dataService)
 
 
-function firstCtrl(dataService,$timeout){
+function firstCtrl(dataService,$timeout,$location){
 
     var first = this;
     first.tasks = dataService;
@@ -24,6 +24,12 @@ function firstCtrl(dataService,$timeout){
         first.tasks.push(task);
         console.log(first.tasks);
     }
+
+    $timeout(function(){
+        $location.path("/list");
+    },5000)
+
+
 
 
 }

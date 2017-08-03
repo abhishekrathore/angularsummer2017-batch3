@@ -1,6 +1,22 @@
 angular
 .module("mainApp",['firebase'])
 .controller("todoCtrl",todoCtrl)
+.filter("reverse",reverse)
+
+
+function reverse(){
+
+ return function(input,arg1){
+
+  return input.split(arg1).join('');
+ }
+
+
+
+
+}
+
+
 
 
 function todoCtrl($firebaseArray){
@@ -80,8 +96,7 @@ function todoCtrl($firebaseArray){
 
       todo.custom = function(data,input){
         console.log(data,input);
-        
-        return !todo.pending  ;
+        return !todo.pending || !data ;
       }
 
 

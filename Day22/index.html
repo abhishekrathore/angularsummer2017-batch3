@@ -55,7 +55,7 @@
             <div class="col-xs-12">
                 <ul class="list-group">
                     <li class="list-group-item" ng-class="{'list-group-item-success':task.status,'done':task.status}" ng-repeat="task in todo.tasks | filter:todo.search | filter:{status:todo.pending}: todo.custom | orderBy:'status'">
-                        {{task.title}}
+                        {{task.title | reverse : 't'}}
                         <button class="btn btn-info" ng-class="{'btn-danger':task.status}" ng-click="todo.done(task.$id)">{{task.status ? 'Undo'  :'Done'}}</button>
                         <button class="btn btn-warning">Up</button>
                         <button class="btn btn-danger">Down</button>
