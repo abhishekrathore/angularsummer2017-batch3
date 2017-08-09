@@ -1,0 +1,26 @@
+<html ng-app="mainApp">
+    <head>
+    <title>Angular - AJAX</title>
+    <script src="angular.js"></script>
+    <script src="app.js"></script>
+    <style>
+    img{
+        width:200px;
+    }
+</style>
+ </head>
+    <body ng-controller="firstCtrl as first">
+   
+        <input type="text" ng-model="first.name">
+        <button ng-click="first.search(first.name)">Search</button>
+
+     <div ng-repeat="char in first.chars">
+            <h1>{{char.name}}</h1>
+            <h3>{{char.description}}</h3>
+            <img ng-src="{{char.thumbnail.path+'.'+char.thumbnail.extension}}">
+
+
+     </div>
+
+    </body>
+</html>
