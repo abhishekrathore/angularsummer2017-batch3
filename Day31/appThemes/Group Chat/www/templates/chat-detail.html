@@ -1,0 +1,85 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="{{chat.name}}">
+  <ion-content class="padding">
+    <!--</ion-item>-->
+    <div class="row">
+      <div class="col">
+        <p class="text-center text-small bold"> 22 Mar, 2017</p>
+
+        <div class="row">
+          <div class="col relative">
+                        <span class="chat-bubble right" ng-style="chat.maxWidth" style="color: white">
+                            Hello
+                        </span>
+            <!--<div class="right-chat-tail"></div>-->
+          </div>
+        </div>
+        <div class="row">
+          <div class="col relative">
+                        <span class="chat-bubble left iten-text-wrap" ng-style="chat.maxWidth">
+                            Hello, Brother
+                        </span>
+            <!--<div class="left-chat-tail"></div>-->
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col relative">
+                        <span class="chat-bubble right" ng-style="chat.maxWidth">
+                            How are you?
+                        </span>
+            <!--<div class="right-chat-tail"></div>-->
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col relative">
+                        <span class="chat-bubble left iten-text-wrap" ng-style="chat.maxWidth">
+                            I am cool... How Are You??
+                        </span>
+            <!--<div class="left-chat-tail"></div>-->
+          </div>
+        </div>
+        <div class="row">
+          <div class="col relative">
+                        <span class="chat-bubble right" ng-style="chat.maxWidth">
+                            I am Fine..
+                        </span>
+            <!--<div class="right-chat-tail"></div>-->
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col relative">
+                        <span class="chat-bubble left iten-text-wrap" ng-style="chat.maxWidth">
+                            and say whats going on?
+                        </span>
+            <!--<div class="left-chat-tail"></div>-->
+          </div>
+        </div>
+        <div class="row">
+          <div class="col relative">
+                        <span class="chat-bubble right" ng-style="chat.maxWidth">
+                            Just chilling at pool site with buddies
+                            Uh Say??
+                        </span>
+            <!--<div class="right-chat-tail"></div>-->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+
+  <ion-footer-bar style="border-top:2px solid lightgrey; border-bottom:2px solid lightgrey; padding:0">
+        <textarea type="text" placeholder="Send a message...." class="item-input col-90 chatbox">
+      </textarea>
+    <button type="button" class="button button-icon icon ion-android-send otb-pink padding-0">
+    </button>
+  </ion-footer-bar>
+</ion-view>

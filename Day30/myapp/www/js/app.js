@@ -28,15 +28,6 @@ function firstCtrl($ionicModal,$scope,$cordovaFlashlight,$cordovaCamera,$cordova
   var first = this;
 
 
- 
-
-
-
-
-
-
-
-
   $ionicModal.fromTemplateUrl('modal.html', {
     scope:$scope,
     animation: 'slide-in-up'
